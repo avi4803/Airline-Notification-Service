@@ -16,6 +16,7 @@ oAuth2Client.setCredentials(
 
 async function sendMail(data) {
     try {
+        console.log(data)
         const accessToken = await oAuth2Client.getAccessToken();
         const transport = nodemailer.createTransport({
             service: "gmail",
@@ -30,7 +31,7 @@ async function sendMail(data) {
         })
 
         const mailOptions = {
-            from: data.from ,
+            from: 'Avinash' ,
             to: data.to,
             subject: data.subject,
             text: data.text
